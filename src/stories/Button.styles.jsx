@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const buttonBackground = props => {
     let bg = "#e0e0e0";
-    switch(props.background){
-        case "primary": 
+    switch (props.background) {
+        case "primary":
             bg = "#2962ff";
             break;
         case "secondary":
@@ -45,12 +45,12 @@ const buttonBackground = props => {
 
 const hoverBackground = props => {
 
-    if(props.disabled || props.background === 'default-hover' || props.background === 'hover-primary' || props.background === 'hover-secondary' || 
-    props.background === 'hover-danger' || props.background === 'hover-outline' || props.background === 'hover-text') return;
+    if (props.disabled || props.background === 'default-hover' || props.background === 'hover-primary' || props.background === 'hover-secondary' ||
+        props.background === 'hover-danger' || props.background === 'hover-outline' || props.background === 'hover-text') return;
 
     let hoverBG = "#aeaeae";
-    switch(props.background){
-        case "primary": 
+    switch (props.background) {
+        case "primary":
             hoverBG = "#0039cb";
             break;
         case "secondary":
@@ -74,12 +74,12 @@ const hoverBackground = props => {
 
 const hoverColor = props => {
 
-    if(props.disabled || props.background === 'default-hover' || props.background === 'hover-primary' || props.background === 'hover-secondary' || 
-    props.background === 'hover-danger' || props.background === 'hover-outline' || props.background === 'hover-text') return;
+    if (props.disabled || props.background === 'default-hover' || props.background === 'hover-primary' || props.background === 'hover-secondary' ||
+        props.background === 'hover-danger' || props.background === 'hover-outline' || props.background === 'hover-text') return;
 
     let hoverColor = "#4f4f4f";
-    switch(props.background){
-        case "primary": 
+    switch (props.background) {
+        case "primary":
             hoverColor = "#cfdaf5";
             break;
         case "secondary":
@@ -88,10 +88,10 @@ const hoverColor = props => {
         case "danger":
             hoverColor = "#e2b8b9";
             break;
-        case "outline": 
+        case "outline":
             hoverColor = "#637bfe"
             break;
-        case "text": 
+        case "text":
             hoverColor = "#637bfe"
             break;
         default:
@@ -103,8 +103,8 @@ const hoverColor = props => {
 
 const buttonScale = props => {
     let scale = 1;
-    switch(props.size){
-        case "small": 
+    switch (props.size) {
+        case "small":
             scale = 0.75;
             break;
         case "medium":
@@ -127,14 +127,14 @@ export const StyledButton = styled.button`
     color: ${(props) => props.color};
     font-weight: bold;
     box-shadow: ${props => {
-        if(props.background === 'outline' || props.background === 'text' || props.disableShadow) {
+        if (props.background === 'outline' || props.background === 'text' || props.disableShadow) {
             return "0";
         } else {
             return "0 4px 8px -8px #222";
         }
     }};
     border: ${props => {
-        if(props.background === 'outline' || props.background === 'hover-outline'){
+        if (props.background === 'outline' || props.background === 'hover-outline') {
             return "2px solid #2962ff";
         } else {
             return "none";
@@ -143,8 +143,8 @@ export const StyledButton = styled.button`
     padding: ${props => buttonScale(props)};
     border-radius: 8px;
     cursor: ${props => {
-        if(props.background === 'default-hover' || props.background === 'hover-primary' || props.background === 'hover-secondary' || 
-        props.background === 'hover-danger' || props.background === 'hover-outline' || props.background === 'hover-text'){
+        if (props.background === 'default-hover' || props.background === 'hover-primary' || props.background === 'hover-secondary' ||
+            props.background === 'hover-danger' || props.background === 'hover-outline' || props.background === 'hover-text') {
             return 'not-allowed';
         } else {
             return 'pointer';
@@ -159,12 +159,12 @@ export const StyledButton = styled.button`
 
     &:disabled {
         background: ${props => {
-            if(props.background === 'text'){
-                return '#fff';
-            } else {
-                return '#e0e0e0';
-            }
-        }};
+        if (props.background === 'text') {
+            return '#fff';
+        } else {
+            return '#e0e0e0';
+        }
+    }};
         cursor: not-allowed;
     }
 `;

@@ -6,7 +6,7 @@ export const StyledSidebar = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    color: ${(props) => props.color };
+    color: ${(props) => props.color};
     background: ${(props) => props.background};
     padding: 10px;
     margin: 0;

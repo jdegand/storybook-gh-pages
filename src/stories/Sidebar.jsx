@@ -6,18 +6,18 @@ import { StyledSidebar } from './Sidebar.styles';
 export const Sidebar = (props) => {
 
     return (
-      <StyledSidebar {...props}>
-          <div><span className="span">Dev</span>challenges.io</div>
-          <ul>
-              <li>Colors</li>
-              <li>Typography</li>
-              <li>Spaces</li>
-              <li className={!props.active ? "active": "" }>Buttons</li>
-              <li className={props.active ? "active": "" }>Inputs</li>
-              <li>Grid</li>
-          </ul>
-      </StyledSidebar>
-  );
+        <StyledSidebar {...props}>
+            <div><span className="span">Dev</span>challenges.io</div>
+            <ul>
+                <li>Colors</li>
+                <li>Typography</li>
+                <li>Spaces</li>
+                <li className={!props.active ? "active" : ""}>Buttons</li>
+                <li className={props.active ? "active" : ""}>Inputs</li>
+                <li>Grid</li>
+            </ul>
+        </StyledSidebar>
+    );
 
 };
 

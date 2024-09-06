@@ -1,56 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledInput } from './Input.styles';
-import { StyledTextArea } from './Input.styles';
+import { StyledInput, StyledTextArea } from './Input.styles';
 
-export const Input = ({disabled, error, helperText, label, multiline, row, startIcon, value, alt, ...props} ) => {
+export const Input = ({ disabled, error, helperText, label, multiline, row, startIcon, value, alt, ...props }) => {
 
-   // add state to control value prop and for onChange
+  // add state to control value prop and for onChange
 
-    const style = {
-        textIndent: startIcon ? "20px" : "0",
-    }
+  const style = {
+    textIndent: startIcon ? "20px" : "0",
+  }
 
-    const style2 = {
-      color: error ? "#d32f2f" : "inherit"
-    }
+  const style2 = {
+    color: error ? "#d32f2f" : "inherit"
+  }
 
-    /*
-
-    original storybook implementation
+  return (
+    <form style={{ position: 'relative' }}>
+      <label style={style2} htmlFor="input">{label}</label>
       {startIcon &&
-          <img style={{width:'20px', height:'20px', position: 'absolute', top: '12%', left: '25px', zIndex: '2' }} src={startIcon} alt={alt}/>
+        <img style={{ width: '20px', height: '20px', position: 'absolute', bottom: '10px', left: '15px', zIndex: '2' }} src={startIcon} alt={alt} />
       }
 
-      changed it for display -  added position relative on form - originally didn't have that
-    */
-  
-  return (
-      <form style={{position: 'relative'}}>
-          <label style={style2} htmlFor="input">{label}</label>
-        {startIcon &&
-            <img style={{width:'20px', height:'20px', position: 'absolute', bottom: '10px', left: '15px', zIndex: '2' }} src={startIcon} alt={alt}/>
-        }
-
-        { multiline ? <StyledTextArea 
-            type="text"
-            placeholder=" Placeholder"
-            value={value || null}
-            disabled={disabled}
-            error={error} rows={row} {...props} /> :
-          <StyledInput
-            type="text"
-            id="label"
-            placeholder=" Placeholder"
-            value={value || null}
-            disabled={disabled}
-            error={error}
-            {...props}
-            style={style}
-          />
-        }
+      {multiline ? <StyledTextArea
+        type="text"
+        placeholder=" Placeholder"
+        value={value || null}
+        disabled={disabled}
+        error={error} rows={row} {...props} /> :
+        <StyledInput
+          type="text"
+          id="label"
+          placeholder=" Placeholder"
+          value={value || null}
+          disabled={disabled}
+          error={error}
+          {...props}
+          style={style}
+        />
+      }
       <span style={style2}>{helperText}</span>
-      </form>
+    </form>
   );
 
 };
@@ -75,7 +64,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  alt:"",
+  alt: "",
   background: 'default',
   blackBorder: false,
   color: '#5d5d5d',
