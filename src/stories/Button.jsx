@@ -48,7 +48,7 @@ Button.defaultProps = {
   disableShadow: false,
   endIcon: '',
   fullWidth: false,
-  label: 'Default',
+  label: 'default',
   startIcon: '',
   size: 'medium',
   variant: 'default',
